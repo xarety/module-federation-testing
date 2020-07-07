@@ -1,6 +1,7 @@
 {
   "name": "@module-federation-testing/master",
   "version": "0.0.2",
+  "main": "./dist/main.js",
   "scripts": {
     "start": "webpack-dev-server",
     "build": "webpack --mode production",

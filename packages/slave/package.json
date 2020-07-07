@@ -1,6 +1,7 @@
 {
   "name": "@module-federation-testing/slave",
   "version": "0.0.2",
+  "main": "./dist/main.js",
   "scripts": {
     "start": "webpack-dev-server",
     "build": "webpack --mode production",
@@ -28,5 +29,9 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "exports": {
+    ".": "./dist/main.js",
+    "./remoteEntry.js": "./dist/remoteEntry.js"
   }
 }
