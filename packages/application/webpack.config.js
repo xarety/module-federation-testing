@@ -7,6 +7,7 @@ module.exports = {
     resolve: {
         extensions: ['.js'],
     },
+    devtool: 'cheap-module-source-map',
     devServer: {
         port: 8080,
     },
@@ -24,9 +25,9 @@ module.exports = {
         new ModuleFederationPlugin({
             name: 'application',
             remotes: {
-                'feature-a': 'feature-a',
-                'feature-b': 'feature-b',
-                'feature-c': 'feature-с',
+                feature_a: 'feature-a',
+                feature_b: 'feature-b',
+                feature_c: 'feature-с',
             },
         }),
         new HtmlWebpackPlugin({

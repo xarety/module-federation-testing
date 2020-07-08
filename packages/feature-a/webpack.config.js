@@ -7,6 +7,7 @@ module.exports = {
     resolve: {
         extensions: ['.js'],
     },
+    devtool: 'cheap-module-source-map',
     devServer: {
         port: 8081,
     },
@@ -22,7 +23,7 @@ module.exports = {
     },
     plugins: [
         new ModuleFederationPlugin({
-            name: 'feature-a',
+            name: 'feature_a',
             library: { type: 'var', name: 'feature_a' },
             filename: 'remoteEntry.js',
             exposes: {
