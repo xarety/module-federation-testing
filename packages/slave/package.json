@@ -29,9 +29,5 @@
   },
   "publishConfig": {
     "access": "public"
-  },
-  "exports": {
-    ".": "./dist/main.js",
-    "./remoteEntry.js": "./dist/remoteEntry.js"
   }
 }
