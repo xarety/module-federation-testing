@@ -1,5 +1,5 @@
 {
-    "name": "application",
+    "name": "@module-federation-testing/application",
     "version": "1.0.0",
     "description": "",
     "main": "./dist/main.js",

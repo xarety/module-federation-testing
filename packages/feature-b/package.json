@@ -1,5 +1,5 @@
 {
-    "name": "feature-b",
+    "name": "@module-federation-testing/feature-b",
     "version": "1.0.0",
     "description": "",
     "main": "./dist/main.js",
