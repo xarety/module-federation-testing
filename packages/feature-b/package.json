@@ -2,9 +2,7 @@
     "name": "feature-b",
     "version": "0.0.0",
     "description": "",
-    "private": true,
-    "main": "./dist/index.js",
-    "typings": "./dist/index.d.ts",
+    "main": "./dist/main.js",
     "scripts": {
         "start": "webpack-dev-server",
         "build": "webpack"
