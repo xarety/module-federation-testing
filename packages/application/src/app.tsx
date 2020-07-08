@@ -3,9 +3,9 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { SideNav, Frame, Page, Sidebar } from '@servicetitan/design-system';
 import { SideNavLinkItem } from '@servicetitan/link-item';
 
-const FeatureA = React.lazy(() => import('feature-a/App'));
-const FeatureB = React.lazy(() => import('feature-b/App'));
-const FeatureC = React.lazy(() => import('feature-c/App'));
+const FeatureA = React.lazy(() => import('feature_a/App'));
+const FeatureB = React.lazy(() => import('feature_b/App'));
+const FeatureC = React.lazy(() => import('feature_c/App'));
 
 export const App: React.FC = () => (
     <React.StrictMode>

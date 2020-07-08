@@ -25,9 +25,9 @@ module.exports = {
         new ModuleFederationPlugin({
             name: 'application',
             remotes: {
-                feature_a: 'feature-a',
-                feature_b: 'feature-b',
-                feature_c: 'feature-с',
+                feature_a: 'feature_a',
+                feature_b: 'feature_b',
+                feature_c: 'feature_с',
             },
         }),
         new HtmlWebpackPlugin({
