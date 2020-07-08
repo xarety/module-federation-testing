@@ -6,5 +6,7 @@
 # Node.js
 node_modules/
 
+*.css.d.ts
+/coverage/
 dist/
 *.tsbuildinfo

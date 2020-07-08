@@ -1,0 +1,28 @@
+{
+    "name": "feature-a",
+    "version": "0.0.0",
+    "description": "",
+    "private": true,
+    "main": "./dist/index.js",
+    "typings": "./dist/index.d.ts",
+    "scripts": {
+        "start": "webpack-dev-server",
+        "build": "webpack"
+    },
+    "dependencies": {
+        "react": "~16.13.1",
+        "react-dom": "~16.13.1",
+        "react-router-dom": "~5.2.0"
+    },
+    "devDependencies": {
+        "@types/react": "~16.9.38",
+        "@types/react-dom": "~16.9.8",
+        "@types/react-router-dom": "~5.1.5"
+    },
+    "publishConfig": {
+        "access": "public"
+    },
+    "cli": {
+        "webpack": false
+    }
+}
