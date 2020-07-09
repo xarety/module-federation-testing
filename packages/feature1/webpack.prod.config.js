@@ -2,4 +2,10 @@ const { merge } = require('webpack-merge');
 const baseConfig = require('../../configurations/webpack.prod.config');
 const config = require('./webpack.config');
 
-module.exports = merge(baseConfig, config, {});
+const version = require('./package.json').version;
+
+module.exports = merge(baseConfig, config, {
+    output: {
+        publicPath: `https://unpkg.com/@module-federation-testing/feature1@${version}/dist/`,
+    },
+});
