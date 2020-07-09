@@ -5,7 +5,7 @@
     "main": "./dist/main.js",
     "scripts": {
         "start": "webpack-dev-server",
-        "build": "webpack"
+        "build": "webpack --mode production"
     },
     "dependencies": {
         "@servicetitan/design-system": "~4.3.1",
@@ -21,8 +21,5 @@
     },
     "publishConfig": {
         "access": "public"
-    },
-    "cli": {
-        "webpack": false
     }
 }

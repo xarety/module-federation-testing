@@ -1,26 +1,22 @@
 {
-    "name": "root",
+    "name": "@module-federation-testing/root",
     "version": "0.0.0",
-    "description": "Multi-package web application template",
-    "private": true,
+    "description": "",
     "scripts": {
         "bootstrap": "npx lerna bootstrap --hoist",
-        "prestart": "startup build",
-        "start": "run-p start:startup start:webpack",
-        "start:startup": "startup start",
-        "start:webpack": "lerna run --stream --parallel start",
-        "build": "run-s build:startup build:webpack",
-        "build:startup": "startup build",
-        "build:webpack": "lerna run --stream --parallel build",
-        "lint": "startup lint",
-        "test": "startup test"
+        "start": "lerna run --stream --parallel start",
+        "build": "lerna run --stream --parallel build"
     },
     "devDependencies": {
-        "@servicetitan/startup": "~6.1.0",
+        "@babel/core": "7.10.4",
+        "@babel/preset-react": "7.10.4",
+        "@babel/preset-typescript": "7.10.4",
+        "babel-loader": "8.1.0",
         "html-webpack-plugin": "git://github.com/ScriptedAlchemy/html-webpack-plugin#master",
-        "npm-run-all": "4.1.5",
+        "lerna": "3.22.1",
+        "typescript": "3.9.3",
+        "webpack": "5.0.0-beta.21",
         "webpack-cli": "3.3.11",
-        "webpack-dev-server": "3.11.0",
-        "webpack": "5.0.0-beta.21"
+        "webpack-dev-server": "3.11.0"
     }
 }

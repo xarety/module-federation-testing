@@ -1,11 +1,11 @@
 {
-    "name": "@module-federation-testing/feature-b",
+    "name": "@module-federation-testing/feature1",
     "version": "1.0.2",
     "description": "",
     "main": "./dist/main.js",
     "scripts": {
         "start": "webpack-dev-server",
-        "build": "webpack"
+        "build": "webpack --mode production"
     },
     "dependencies": {
         "react": "~16.13.1",
@@ -19,8 +19,5 @@
     },
     "publishConfig": {
         "access": "public"
-    },
-    "cli": {
-        "webpack": false
     }
 }

@@ -1,5 +1,5 @@
 {
-    "extends": "@servicetitan/startup/tsconfig/base",
+    "extends": "../../tsconfig.json",
     "compilerOptions": {
         "outDir": "dist",
         "rootDir": "src"

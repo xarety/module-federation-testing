@@ -3,9 +3,9 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { SideNav, Frame, Page, Sidebar } from '@servicetitan/design-system';
 import { SideNavLinkItem } from '@servicetitan/link-item';
 
-const FeatureA = React.lazy(() => import('feature_a/App'));
-const FeatureB = React.lazy(() => import('feature_b/App'));
-const FeatureC = React.lazy(() => import('feature_c/App'));
+const Feature1 = React.lazy(() => import('feature1/App'));
+const Feature2 = React.lazy(() => import('feature2/App'));
+const Feature3 = React.lazy(() => import('feature3/App'));
 
 export const App: React.FC = () => (
     <React.StrictMode>
@@ -19,14 +19,14 @@ export const App: React.FC = () => (
                                     <SideNavLinkItem pathname="/" exact>
                                         Home page
                                     </SideNavLinkItem>
-                                    <SideNavLinkItem pathname="/feature-a">
-                                        Feature A
+                                    <SideNavLinkItem pathname="/feature1">
+                                        Feature 1
                                     </SideNavLinkItem>
-                                    <SideNavLinkItem pathname="/feature-b">
-                                        Feature B
+                                    <SideNavLinkItem pathname="/feature2">
+                                        Feature 2
                                     </SideNavLinkItem>
-                                    <SideNavLinkItem pathname="/feature-c">
-                                        Feature C
+                                    <SideNavLinkItem pathname="/feature3">
+                                        Feature 3
                                     </SideNavLinkItem>
                                 </SideNav>
                             </Sidebar.Section>
@@ -41,9 +41,9 @@ export const App: React.FC = () => (
                                 exact
                                 component={() => <React.Fragment>Application</React.Fragment>}
                             />
-                            <Route path="/feature-a" component={FeatureA} />
-                            <Route path="/feature-b" component={FeatureB} />
-                            <Route path="/feature-c" component={FeatureC} />
+                            <Route path="/feature1" component={Feature1} />
+                            <Route path="/feature2" component={Feature2} />
+                            <Route path="/feature3" component={Feature3} />
                         </Switch>
                     </React.Suspense>
                 </Page>
