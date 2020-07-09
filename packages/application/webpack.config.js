@@ -1,39 +1,23 @@
 const path = require('path');
 
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { merge } = require('webpack-merge');
 const ModuleFederationPlugin = require('webpack').container.ModuleFederationPlugin;
 
-module.exports = {
-    entry: './src/index',
-    mode: 'development',
+const baseConfig = require('../../configurations/webpack.config');
+
+const dependencies = require('./package.json').dependencies;
+
+module.exports = merge(baseConfig, {
     devServer: {
-        contentBase: path.join(__dirname, 'dist'),
-        port: 3000,
-    },
-    output: {
-        publicPath: 'http://localhost:3000/',
-    },
-    resolve: {
-        extensions: ['.ts', '.tsx', '.js'],
-    },
-    module: {
-        rules: [
-            {
-                test: /bootstrap\.tsx$/,
-                loader: 'bundle-loader',
-                options: {
-                    lazy: true,
-                },
-            },
-            {
-                test: /\.tsx?$/,
-                loader: 'babel-loader',
-                exclude: /node_modules/,
-                options: {
-                    presets: ['@babel/preset-react', '@babel/preset-typescript'],
-                },
-            },
+        contentBase: [
+            path.join(__dirname, '../../packages/feature1/dist'),
+            path.join(__dirname, '../../packages/feature2/dist'),
+            path.join(__dirname, '../../packages/feature3/dist'),
         ],
+        contentBasePublicPath: ['/packages/feature1', '/packages/feature2', '/packages/feature3'],
+        port: 8080,
+        historyApiFallback: true,
+        watchContentBase: true,
     },
     plugins: [
         new ModuleFederationPlugin({
@@ -44,10 +28,23 @@ module.exports = {
                 feature2: 'feature2',
                 feature3: 'feature3',
             },
-            // shared: ['react', 'react-dom', 'react-router-dom'],
-        }),
-        new HtmlWebpackPlugin({
-            template: './src/index.html',
+            shared: {
+                'react': {
+                    eager: true,
+                    singleton: true,
+                    requiredVersion: dependencies.react,
+                },
+                'react-dom': {
+                    eager: true,
+                    singleton: true,
+                    requiredVersion: dependencies['react-dom'],
+                },
+                'react-router-dom': {
+                    eager: true,
+                    singleton: true,
+                    requiredVersion: dependencies['react-router-dom'],
+                },
+            },
         }),
     ],
-};
+});

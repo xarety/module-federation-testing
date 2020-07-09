@@ -8,8 +8,8 @@
         "build": "webpack --mode production"
     },
     "dependencies": {
-        "@servicetitan/design-system": "~4.3.1",
-        "@servicetitan/link-item": "~6.0.0",
+        "@servicetitan/design-system": "~4.5.0",
+        "@servicetitan/link-item": "~6.1.0",
         "react": "~16.13.1",
         "react-dom": "~16.13.1",
         "react-router-dom": "~5.2.0"

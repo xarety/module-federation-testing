@@ -12,12 +12,12 @@
         "@babel/preset-react": "7.10.4",
         "@babel/preset-typescript": "7.10.4",
         "babel-loader": "8.1.0",
-        "bundle-loader": "0.5.6",
         "html-webpack-plugin": "git://github.com/ScriptedAlchemy/html-webpack-plugin#master",
         "lerna": "3.22.1",
         "typescript": "3.9.3",
         "webpack": "5.0.0-beta.21",
         "webpack-cli": "3.3.11",
-        "webpack-dev-server": "3.11.0"
+        "webpack-dev-server": "3.11.0",
+        "webpack-merge": "5.0.9"
     }
 }

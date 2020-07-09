@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import { SideNav, Frame, Page, Sidebar } from '@servicetitan/design-system';
+
+import { Frame, Page, Sidebar, SideNav } from '@servicetitan/design-system';
 import { SideNavLinkItem } from '@servicetitan/link-item';
 
 const Feature1 = React.lazy(() => import('feature1/App'));

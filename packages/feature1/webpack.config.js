@@ -1,39 +1,13 @@
-const path = require('path');
-
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { merge } = require('webpack-merge');
 const ModuleFederationPlugin = require('webpack').container.ModuleFederationPlugin;
 
-module.exports = {
-    entry: './src/index',
-    mode: 'development',
-    devServer: {
-        contentBase: path.join(__dirname, 'dist'),
-        port: 3001,
-    },
+const baseConfig = require('../../configurations/webpack.config');
+
+const dependencies = require('./package.json').dependencies;
+
+module.exports = merge(baseConfig, {
     output: {
-        publicPath: 'http://localhost:3001/',
-    },
-    resolve: {
-        extensions: ['.ts', '.tsx', '.js'],
-    },
-    module: {
-        rules: [
-            {
-                test: /bootstrap\.tsx$/,
-                loader: 'bundle-loader',
-                options: {
-                    lazy: true,
-                },
-            },
-            {
-                test: /\.tsx?$/,
-                loader: 'babel-loader',
-                exclude: /node_modules/,
-                options: {
-                    presets: ['@babel/preset-react', '@babel/preset-typescript'],
-                },
-            },
-        ],
+        publicPath: '/packages/feature1/',
     },
     plugins: [
         new ModuleFederationPlugin({
@@ -43,10 +17,23 @@ module.exports = {
             exposes: {
                 './App': './src/app',
             },
-            // shared: ['react', 'react-dom', 'react-router-dom'],
-        }),
-        new HtmlWebpackPlugin({
-            template: './src/index.html',
+            shared: {
+                'react': {
+                    eager: true,
+                    singleton: true,
+                    requiredVersion: dependencies.react,
+                },
+                'react-dom': {
+                    eager: true,
+                    singleton: true,
+                    requiredVersion: dependencies['react-dom'],
+                },
+                'react-router-dom': {
+                    eager: true,
+                    singleton: true,
+                    requiredVersion: dependencies['react-router-dom'],
+                },
+            },
         }),
     ],
-};
+});
