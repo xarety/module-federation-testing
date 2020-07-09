@@ -1,24 +1,8 @@
-const path = require('path');
-
-const { merge } = require('webpack-merge');
 const ModuleFederationPlugin = require('webpack').container.ModuleFederationPlugin;
-
-const baseConfig = require('../../configurations/webpack.config');
 
 const dependencies = require('./package.json').dependencies;
 
-module.exports = merge(baseConfig, {
-    devServer: {
-        contentBase: [
-            path.join(__dirname, '../../packages/feature1/dist'),
-            path.join(__dirname, '../../packages/feature2/dist'),
-            path.join(__dirname, '../../packages/feature3/dist'),
-        ],
-        contentBasePublicPath: ['/packages/feature1', '/packages/feature2', '/packages/feature3'],
-        port: 8080,
-        historyApiFallback: true,
-        watchContentBase: true,
-    },
+module.exports = {
     plugins: [
         new ModuleFederationPlugin({
             name: 'application',
@@ -47,4 +31,4 @@ module.exports = merge(baseConfig, {
             },
         }),
     ],
-});
+};

@@ -4,8 +4,8 @@
     "description": "",
     "main": "./dist/main.js",
     "scripts": {
-        "start": "webpack --watch",
-        "build": "webpack --mode production"
+        "start": "webpack --watch --config webpack.dev.config.js",
+        "build": "webpack --config webpack.prod.config.js"
     },
     "dependencies": {
         "react": "~16.13.1",

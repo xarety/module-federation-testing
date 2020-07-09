@@ -1,14 +1,8 @@
-const { merge } = require('webpack-merge');
 const ModuleFederationPlugin = require('webpack').container.ModuleFederationPlugin;
-
-const baseConfig = require('../../configurations/webpack.config');
 
 const dependencies = require('./package.json').dependencies;
 
-module.exports = merge(baseConfig, {
-    output: {
-        publicPath: '/packages/feature1/',
-    },
+module.exports = {
     plugins: [
         new ModuleFederationPlugin({
             name: 'feature1',
@@ -36,4 +30,4 @@ module.exports = merge(baseConfig, {
             },
         }),
     ],
-});
+};

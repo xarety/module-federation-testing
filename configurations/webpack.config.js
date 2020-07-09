@@ -2,8 +2,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     entry: './src/index',
-    mode: 'development',
-    devtool: 'cheap-source-map',
     resolve: {
         extensions: ['.ts', '.tsx', '.js'],
     },

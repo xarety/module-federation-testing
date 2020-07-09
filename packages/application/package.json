@@ -4,8 +4,8 @@
     "description": "",
     "main": "./dist/main.js",
     "scripts": {
-        "start": "webpack-dev-server",
-        "build": "webpack --mode production"
+        "start": "webpack-dev-server --config webpack.dev.config.js",
+        "build": "webpack --config webpack.prod.config.js"
     },
     "dependencies": {
         "@servicetitan/design-system": "~4.5.0",
