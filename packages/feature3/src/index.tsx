@@ -1,6 +1,3 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-
-import { App } from './app';
-
-ReactDOM.render(<App />, document.getElementById('app'));
+// @ts-ignore
+import bootstrap from './bootstrap';
+bootstrap(() => {});

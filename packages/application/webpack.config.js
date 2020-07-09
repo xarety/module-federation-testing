@@ -8,16 +8,23 @@ module.exports = {
     mode: 'development',
     devServer: {
         contentBase: path.join(__dirname, 'dist'),
-        port: 3001,
+        port: 3000,
     },
     output: {
-        // publicPath: 'http://localhost:3001/',
+        publicPath: 'http://localhost:3000/',
     },
     resolve: {
         extensions: ['.ts', '.tsx', '.js'],
     },
     module: {
         rules: [
+            {
+                test: /bootstrap\.tsx$/,
+                loader: 'bundle-loader',
+                options: {
+                    lazy: true,
+                },
+            },
             {
                 test: /\.tsx?$/,
                 loader: 'babel-loader',

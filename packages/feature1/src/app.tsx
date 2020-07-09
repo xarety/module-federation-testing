@@ -1,3 +1,5 @@
 import React from 'react';
 
-export const App: React.FC = () => <React.Fragment>Feature 1</React.Fragment>;
+const App: React.FC = () => <React.Fragment>Feature 1</React.Fragment>;
+
+export default App;
