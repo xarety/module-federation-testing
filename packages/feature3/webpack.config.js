@@ -8,10 +8,10 @@ module.exports = {
     mode: 'development',
     devServer: {
         contentBase: path.join(__dirname, 'dist'),
-        port: 3002,
+        port: 3004,
     },
     output: {
-        publicPath: 'http://localhost:3002/',
+        // publicPath: 'http://localhost:3004/',
     },
     resolve: {
         extensions: ['.ts', '.tsx', '.js'],
@@ -36,7 +36,7 @@ module.exports = {
             exposes: {
                 './App': './src/app',
             },
-            shared: ['react', 'react-dom', 'react-router-dom'],
+            // shared: ['react', 'react-dom', 'react-router-dom'],
         }),
         new HtmlWebpackPlugin({
             template: './src/index.html',

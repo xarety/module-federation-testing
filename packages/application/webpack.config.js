@@ -11,7 +11,7 @@ module.exports = {
         port: 3001,
     },
     output: {
-        publicPath: 'http://localhost:3001/',
+        // publicPath: 'http://localhost:3001/',
     },
     resolve: {
         extensions: ['.ts', '.tsx', '.js'],
@@ -37,7 +37,7 @@ module.exports = {
                 feature2: 'feature2',
                 feature3: 'feature3',
             },
-            shared: ['react', 'react-dom', 'react-router-dom'],
+            // shared: ['react', 'react-dom', 'react-router-dom'],
         }),
         new HtmlWebpackPlugin({
             template: './src/index.html',
