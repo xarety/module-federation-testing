@@ -6,6 +6,6 @@ const version = require('./package.json').version;
 
 module.exports = merge(baseConfig, config, {
     output: {
-        publicPath: `https://unpkg.com/@module-federation-testing/feature1@${version}/dist/`,
+        publicPath: `https://unpkg.com/@module-federation-testing/feature1@${version}/dist/bundle/`,
     },
 });

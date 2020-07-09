@@ -9,7 +9,7 @@ module.exports = {
             library: { type: 'var', name: 'feature2' },
             filename: 'remoteEntry.js',
             exposes: {
-                './App': './src/app',
+                './App': './dist/app',
             },
             shared: {
                 'react': {

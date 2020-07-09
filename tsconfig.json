@@ -1,0 +1,9 @@
+{
+    "files": [],
+    "references": [
+        { "path": "packages/application" },
+        { "path": "packages/feature1" },
+        { "path": "packages/feature2" },
+        { "path": "packages/feature3" }
+    ]
+}

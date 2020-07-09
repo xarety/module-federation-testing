@@ -1,7 +1,19 @@
-const { merge } = require('webpack-merge');
-const config = require('./webpack.config');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-module.exports = merge(config, {
-    mode: 'development',
-    devtool: 'cheap-module-source-map',
+const { createWebpackConfig } = require('@servicetitan/startup');
+
+const config = createWebpackConfig({
+    configuration: {
+        mode: 'development',
+    },
 });
+
+config.plugins.splice(
+    0,
+    3, // WriteFilePlugin & WatchIgnorePlugin aren't ready
+    new HtmlWebpackPlugin({
+        template: './src/index.ejs',
+    })
+);
+
+module.exports = config;

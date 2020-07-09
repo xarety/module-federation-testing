@@ -1,7 +1,19 @@
-const { merge } = require('webpack-merge');
-const config = require('./webpack.config');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-module.exports = merge(config, {
-    mode: 'production',
-    devtool: 'source-map',
+const { createWebpackConfig } = require('@servicetitan/startup');
+
+const config = createWebpackConfig({
+    configuration: {
+        mode: 'production',
+    },
 });
+
+config.plugins.splice(
+    0,
+    1,
+    new HtmlWebpackPlugin({
+        template: './src/index.ejs',
+    })
+);
+
+module.exports = config;
