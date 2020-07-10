@@ -1,19 +1,22 @@
-const path = require('path');
-
 const { merge } = require('webpack-merge');
 const baseConfig = require('../../configurations/webpack.dev.config');
 const config = require('./webpack.config');
+
+const scope = process.env.SERVICETITAN_SCOPE;
+const features = Object.entries(require('../../configurations/features')).filter(([package]) => {
+    if (!scope.length) {
+        return true;
+    }
+
+    return scope.includes(package);
+});
 
 module.exports = merge(baseConfig, config, {
     devServer: {
         port: 8080,
         historyApiFallback: true,
-        // contentBase: [
-        //     path.join(__dirname, '../../packages/feature1/dist/bundle'),
-        //     path.join(__dirname, '../../packages/feature2/dist/bundle'),
-        //     path.join(__dirname, '../../packages/feature3/dist/bundle'),
-        // ],
-        // contentBasePublicPath: ['/packages/feature1', '/packages/feature2', '/packages/feature3'],
-        // watchContentBase: true,
+        contentBase: features.map(([, { contentBase }]) => contentBase),
+        contentBasePublicPath: features.map(([, { publicPath }]) => publicPath),
+        watchContentBase: true,
     },
 });

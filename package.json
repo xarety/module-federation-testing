@@ -4,8 +4,7 @@
     "description": "",
     "scripts": {
         "bootstrap": "npx lerna bootstrap --hoist",
-        "prestart": "startup build",
-        "start": "run-p start:startup start:webpack",
+        "start": "node ./start.js",
         "start:startup": "startup start",
         "start:webpack": "lerna run --stream --parallel start",
         "build": "run-s build:startup build:webpack",
@@ -21,6 +20,7 @@
         "webpack": "5.0.0-beta.21",
         "webpack-cli": "3.3.11",
         "webpack-dev-server": "3.11.0",
-        "webpack-merge": "5.0.9"
+        "webpack-merge": "5.0.9",
+        "yargs": "15.4.0"
     }
 }
