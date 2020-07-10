@@ -8,8 +8,11 @@
         "build": "webpack --config webpack.prod.config.js"
     },
     "dependencies": {
+        "@module-federation-testing/shared": "^3.2.1",
         "@servicetitan/design-system": "~4.5.0",
         "@servicetitan/link-item": "~6.1.0",
+        "@servicetitan/react-ioc": "~6.1.0",
+        "mobx-react": "~6.2.2",
         "react": "~16.13.1",
         "react-dom": "~16.13.1",
         "react-router-dom": "~5.2.0"

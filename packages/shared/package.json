@@ -1,0 +1,22 @@
+{
+    "name": "@module-federation-testing/shared",
+    "version": "3.2.1",
+    "description": "",
+    "main": "./dist/index.js",
+    "typings": "./dist/index.d.ts",
+    "files": [
+        "dist",
+        "src"
+    ],
+    "dependencies": {
+        "@servicetitan/react-ioc": "~6.1.0",
+        "mobx": "~5.15.4"
+    },
+    "devDependencies": {},
+    "publishConfig": {
+        "access": "public"
+    },
+    "cli": {
+        "webpack": false
+    }
+}

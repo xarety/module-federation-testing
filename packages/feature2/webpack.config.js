@@ -12,6 +12,26 @@ module.exports = {
                 './App': './dist/app',
             },
             shared: {
+                '@module-federation-testing/shared': {
+                    eager: true,
+                    singleton: true,
+                    requiredVersion: dependencies['@module-federation-testing/shared'],
+                },
+                '@servicetitan/design-system': {
+                    eager: true,
+                    singleton: true,
+                    requiredVersion: dependencies['@servicetitan/design-system'],
+                },
+                '@servicetitan/react-ioc': {
+                    eager: true,
+                    singleton: true,
+                    requiredVersion: dependencies['@servicetitan/react-ioc'],
+                },
+                'mobx-react': {
+                    eager: true,
+                    singleton: true,
+                    requiredVersion: dependencies['mobx-react'],
+                },
                 'react': {
                     eager: true,
                     singleton: true,

@@ -2,9 +2,9 @@
     "extends": "../../configurations/tsconfig.json",
     "compilerOptions": {
         "outDir": "dist",
-        "rootDir": "src"
+        "rootDir": "src",
+        "composite": true
     },
     "include": ["src/**/*"],
-    "exclude": ["src/**/__tests__/**/*"],
-    "references": [{ "path": "../shared" }]
+    "exclude": ["src/**/__tests__/**/*"]
 }
