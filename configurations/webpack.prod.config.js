@@ -4,13 +4,13 @@ const { createWebpackConfig } = require('@servicetitan/startup');
 
 const config = createWebpackConfig({
     configuration: {
-        mode: 'production',
+        mode: 'development',
     },
 });
 
 config.plugins.splice(
     0,
-    1,
+    3, // WriteFilePlugin & WatchIgnorePlugin aren't ready
     new HtmlWebpackPlugin({
         template: './src/index.ejs',
     })
