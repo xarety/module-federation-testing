@@ -8,11 +8,16 @@ const config = createWebpackConfig({
     },
 });
 
+const features = require('./features');
+
 config.plugins.splice(
     0,
     3, // WriteFilePlugin & WatchIgnorePlugin aren't ready
     new HtmlWebpackPlugin({
         template: './src/index.ejs',
+        templateParameters: {
+            features: Object.entries(features).map(([, { cdn }]) => cdn),
+        },
     })
 );
 
