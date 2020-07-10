@@ -1,6 +1,6 @@
 {
     "name": "@module-federation-testing/feature1",
-    "version": "3.2.1",
+    "version": "3.3.0",
     "description": "",
     "main": "./dist/main.js",
     "scripts": {

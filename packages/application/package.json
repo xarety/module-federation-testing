@@ -1,6 +1,6 @@
 {
     "name": "@module-federation-testing/application",
-    "version": "3.2.1",
+    "version": "3.3.0",
     "description": "",
     "main": "./dist/main.js",
     "scripts": {
@@ -8,7 +8,7 @@
         "build": "webpack --config webpack.prod.config.js"
     },
     "dependencies": {
-        "@module-federation-testing/shared": "^3.2.1",
+        "@module-federation-testing/shared": "^3.3.0",
         "@servicetitan/design-system": "~4.5.0",
         "@servicetitan/link-item": "~6.1.0",
         "@servicetitan/react-ioc": "~6.1.0",
